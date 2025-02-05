@@ -5,3 +5,4 @@ class Eleve:
     id: int
     nom: str
     prenom: str
+    age: int

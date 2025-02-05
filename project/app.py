@@ -9,8 +9,7 @@ app = flask.Flask(__name__)
 app.register_blueprint(eleves_bp, url_prefix='/eleves')
 
 @app.route('/', methods=['GET'])
-def liste_eleves():
-    # Traitement du template et transmission du HTML généré au client
+def accueil():
     return flask.render_template('accueil.jinja')
 
 

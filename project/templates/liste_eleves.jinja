@@ -1,11 +1,8 @@
-
 {# On hérite de squelette.jinja #}
 
 {% extends "squelette.jinja"%}
 
-
 {# Dans lequel on remplace le block main par ceci: #}
-
 
 {% block main %}
 
@@ -25,11 +22,11 @@
                         <th scope="col">ID</th>
                         <th scope="col">Nom</th>
                         <th scope="col">Prénom</th>
+                        <th scope="col">Âge</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {# Ci dessous, on boucle sur la liste d'élèves qui a été transmise par le contrôleur.
-                    Un navigateur ne sait pas interpréter ce code. #}
+                    {# Ci-dessous, on boucle sur la liste d'élèves qui a été transmise par le contrôleur. #}
                     {% for eleve in eleves %}
                         <tr class="">
                             <td scope="row"> 
@@ -37,6 +34,7 @@
                             </td>
                             <td>{{ eleve.nom }}</td>
                             <td>{{ eleve.prenom }}</td>
+                            <td>{{ eleve.age }}</td>
                         </tr>
                     {% endfor %}
                 </tbody>

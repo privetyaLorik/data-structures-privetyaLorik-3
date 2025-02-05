@@ -20,7 +20,7 @@ def create_eleve():
     if request.method == 'POST':
         # On utilise un POST pour créer un nouvel élève
         print("CREATION")
-        id_eleve = svc.create_eleve(request.form['nom'], request.form['prenom'])
+        id_eleve = svc.create_eleve(request.form['nom'], request.form['prenom'],request.form['age'])
         return redirect(url_for('eleves_bp.read_eleve', id=id_eleve))
     else:
         # On utilise un GET pour afficher le formulaire
@@ -37,7 +37,7 @@ def read_eleve(id: int):
 def update_eleve(eid: int):
     if request.method == 'POST':
         # On utilise un POST pour créer un nouvel élève
-        svc.update_eleve(eid, request.form['nom'], request.form['prenom'])
+        svc.update_eleve(eid, request.form['nom'], request.form['prenom'],request.form['age'])
         return redirect(url_for('eleves_bp.read_eleve', id=eid))
     else:
         # On utilise un GET pour afficher le formulaire
