@@ -1,0 +1,47 @@
+
+{# On hérite de squelette.jinja #}
+
+{% extends "squelette.jinja"%}
+
+
+{# Dans lequel on remplace le block main par ceci: #}
+
+
+{% block main %}
+
+        <h1>Liste des élèves</h1>
+
+        <a href = "{{ url_for('eleves_bp.create_eleve') }}">Ajouter un nouvel élève</a>
+
+        
+        <div
+            class="table"
+        >
+            <table
+                class="table table-primary table-striped table-hover"
+            >
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {# Ci dessous, on boucle sur la liste d'élèves qui a été transmise par le contrôleur.
+                    Un navigateur ne sait pas interpréter ce code. #}
+                    {% for eleve in eleves %}
+                        <tr class="">
+                            <td scope="row"> 
+                                <a href="{{ url_for('eleves_bp.read_eleve', id=eleve.id) }}">{{ eleve.id }}</a>
+                            </td>
+                            <td>{{ eleve.nom }}</td>
+                            <td>{{ eleve.prenom }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        </main>
+
+{% endblock %}

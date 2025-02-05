@@ -1,0 +1,36 @@
+main {
+    max-width: 500px;
+    margin: 0 auto; /*souvent utilisé pour centrer un élément dans son conteneur*/
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;  
+    background-color: #ccc;
+    padding: 1rem;
+    text-align: center;
+}
+
+/*toutes les balises ul dans les balises nav*/
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px; 
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+

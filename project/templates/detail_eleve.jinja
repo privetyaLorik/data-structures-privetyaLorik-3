@@ -1,0 +1,19 @@
+{% extends "squelette.jinja" %}
+
+{# La variable eleve doit avoir été transmise par le controler #}
+
+<script type="text/javascript">
+
+
+{% block main %}
+    <h1>Détails de l'élève</h1>
+    <p><strong>Nom :</strong> {{ eleve.nom }}</p>
+    <p><strong>Prénom :</strong> {{ eleve.prenom }}</p>
+
+    <a href="{{ url_for('eleves_bp.update_eleve', eid=eleve.id) }}">Modifier l'élève</a>
+
+    <a href="javascript:confirmer_suppression()">Supprimer l'élève</a>
+
+    <a href="{{ url_for('eleves_bp.liste_eleves') }}">Retour à la liste</a>
+
+{% endblock %}
