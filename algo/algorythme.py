@@ -26,12 +26,10 @@ def dfs(g: graphe_no.graphe, depart: str):
                 pile.empiler(p, e)
                 dej.append(e)
 
-
 def est_connexe(g: graphe_no.graphe) -> bool:
     s = g[0]
     liste = bfs(s)
     return liste == graphe_no.sommets(g)
-
 
 def sous_graphe(sommets: list[str], g: graphe_no.graphe) -> graphe_no.graphe:
     new_g = graphe_no.creer()
@@ -40,13 +38,6 @@ def sous_graphe(sommets: list[str], g: graphe_no.graphe) -> graphe_no.graphe:
     for s in sommets:
         for voisin in graphe_no.get_voisins(g, s):
             if voisin in sommets:  
-                graphe_no.ajouter_arete(new_g, s, voisin)
+                graphe_no.set_arete(new_g, s, voisin)
 
     return new_g
-
-
-
-
-                                      
-
-
